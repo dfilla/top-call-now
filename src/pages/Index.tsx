@@ -24,8 +24,8 @@ const stagger = {
 const testimonials = [
   {
     quote: "\u201EEin Klick auf das RES-QR-Etikett und ich sehe auf meinem Smartphone, wo sich Tank, Gaspatronen der Airbags und elektrische Leitungen befinden. Das macht den Einsatz sicherer und effizienter.\u201C",
-    name: "Ein Feuerwehrmann",
-    role: "Freiwillige Feuerwehr im Rhein-Main-Gebiet",
+    name: "Björn Grosbach",
+    role: "Freiwillige Feuerwehr Hofheim-Wildsachsen",
   },
   {
     quote: "\u201EWir haben 120 Flottenfahrzeuge in unter einer Stunde bestellt. Am nächsten Tag waren die Etiketten da. So einfach kann Sicherheit sein.\u201C",
