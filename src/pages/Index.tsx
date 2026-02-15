@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Shield, Clock, Smartphone, ChevronRight, Star, Users, Zap, CheckCircle, ChevronLeft } from "lucide-react";
+import { Shield, Clock, Smartphone, ChevronRight, Star, Users, Zap, CheckCircle, ChevronLeft, Play } from "lucide-react";
 import heroImage from "@/assets/hero-rescue.jpg";
 import {
   Accordion,
@@ -22,12 +22,6 @@ const stagger = {
 };
 
 const testimonials = [
-  {
-    quote: "\u201EAlso das erste was wir machen ist, wir schauen tatsächlich nach den QR-Codes.\u201C",
-    name: "Brandoberinspektorin Stefanie Wiehl",
-    role: "Berufsfeuerwehr Wiesbaden",
-    link: "https://www.youtube.com/watch?v=gm5V1wNw3lU&t=173s",
-  },
   {
     quote: "\u201EEin Klick auf das RES-QR-Etikett und ich sehe auf meinem Smartphone, wo sich Tank, Gaspatronen der Airbags und elektrische Leitungen befinden. Das macht den Einsatz sicherer und effizienter.\u201C",
     name: "Ein Feuerwehrmann",
@@ -82,16 +76,6 @@ const TestimonialSlider = () => {
                 </blockquote>
                 <p className="font-semibold">{testimonials[current].name}</p>
                 <p className="text-muted-foreground text-sm">{testimonials[current].role}</p>
-                {testimonials[current].link && (
-                  <a
-                    href={testimonials[current].link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-primary font-medium mt-2 hover:underline"
-                  >
-                    Video ansehen <ChevronRight className="h-3 w-3" />
-                  </a>
-                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -306,6 +290,42 @@ const Index = () => {
 
       {/* Testimonial Slider */}
       <TestimonialSlider />
+
+      {/* Video Feature – Brandoberinspektorin */}
+      <section className="py-20 lg:py-28">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <div className="rounded-2xl border border-border bg-card overflow-hidden md:grid md:grid-cols-2">
+              <div className="relative aspect-video md:aspect-auto md:min-h-[320px]">
+                <iframe
+                  src="https://www.youtube.com/embed/gm5V1wNw3lU?start=173"
+                  title="Brandoberinspektorin über RES-QR"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+              <div className="p-8 sm:p-10 flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary mb-4 w-fit">
+                  <Play className="h-3 w-3" />
+                  Video-Beitrag
+                </div>
+                <blockquote className="font-display text-xl sm:text-2xl font-semibold leading-snug mb-4">
+                  „Also das erste was wir machen ist, wir schauen tatsächlich nach den QR-Codes."
+                </blockquote>
+                <p className="font-semibold">Brandoberinspektorin Stefanie Wiehl</p>
+                <p className="text-muted-foreground text-sm">Berufsfeuerwehr Wiesbaden</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* How it works */}
       <section className="py-20 lg:py-28">
