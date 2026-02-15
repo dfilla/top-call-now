@@ -17,8 +17,8 @@ const articles = [
   {
     category: "Feuerwehr",
     date: "12. Januar 2026",
-    author: "Patrick Meier",
-    role: "Zugf\u00FChrer, Freiwillige Feuerwehr Darmstadt-Arheilgen",
+    author: "Ein Zugführer",
+    role: "Freiwillige Feuerwehr im Rhein-Main-Gebiet",
     title: "\u201EDer QR-Code hat uns bei einem Hybrid-Unfall entscheidende Minuten gespart\u201C",
     excerpt:
       "Bei einem schweren Auffahrunfall auf der B26 war das verunfallte Fahrzeug ein Plug-in-Hybrid. Normalerweise h\u00E4tten wir erst die Rettungskarte manuell zuordnen m\u00FCssen \u2013 Fahrzeugtyp bestimmen, Modellreihe abgleichen, Karte aus dem Ordner suchen. Dank des RES-QR-Etiketts auf der B-S\u00E4ule hatte unser Angriffstrupp die Rettungskarte in Sekunden auf dem Tablet.",
@@ -30,8 +30,8 @@ const articles = [
   {
     category: "Autohaus",
     date: "3. Februar 2026",
-    author: "Sandra Keller",
-    role: "Serviceleiterin, Autohaus Keller & S\u00F6hne, Stuttgart",
+    author: "Eine Serviceleiterin",
+    role: "Autohaus in Stuttgart",
     title: "\u201EWir bieten RES-QR bei jeder Fahrzeug\u00FCbergabe an \u2013 der Aufwand ist minimal\u201C",
     excerpt:
       "Als Autohaus mit \u00FCber 800 Auslieferungen pro Jahr haben wir nach einer einfachen M\u00F6glichkeit gesucht, unseren Kunden einen echten Sicherheitsmehrwert zu bieten. RES-QR war die perfekte L\u00F6sung: Wir bestellen die Etiketten online, meist sind sie am n\u00E4chsten Tag schon da.",
@@ -44,8 +44,8 @@ const articles = [
   {
     category: "Flottenmanagement",
     date: "18. Dezember 2025",
-    author: "Thomas Brandt",
-    role: "Fuhrparkleiter, LogiTrans GmbH, Frankfurt (320 Fahrzeuge)",
+    author: "Ein Fuhrparkleiter",
+    role: "Logistikunternehmen aus Frankfurt, 320 Fahrzeuge",
     title: "\u201E320 Fahrzeuge ausgestattet \u2013 die Bestellung hat keine Stunde gedauert\u201C",
     excerpt:
       "Als Fuhrparkleiter verantworte ich die Sicherheit von \u00FCber 320 Dienstfahrzeugen. Die Idee, alle Fahrzeuge mit digitalen Rettungskarten auszustatten, klang zun\u00E4chst nach enormem Aufwand. RES-QR hat mich eines Besseren belehrt.",
@@ -58,8 +58,8 @@ const articles = [
   {
     category: "Feuerwehr",
     date: "7. November 2025",
-    author: "Stefanie Wiehl",
-    role: "Brandoberinspektorin, Berufsfeuerwehr Wiesbaden",
+    author: "Brandoberinspektorin Stefanie Wiehl",
+    role: "Berufsfeuerwehr Wiesbaden",
     title: "\u201EJede Minute z\u00E4hlt \u2013 RES-QR macht den Unterschied bei E-Fahrzeugen\u201C",
     excerpt:
       "Die Zahl der Elektro- und Hybridfahrzeuge im Stra\u00DFenverkehr steigt rasant. F\u00FCr uns als Feuerwehr bedeutet das: Die Komplexit\u00E4t bei der technischen Rettung nimmt zu. Die farbcodierten RES-QR-Etiketten helfen uns, den Antriebstyp auf den ersten Blick zu erkennen.",
@@ -71,8 +71,8 @@ const articles = [
   {
     category: "Autohaus",
     date: "22. Oktober 2025",
-    author: "Markus Steinbach",
-    role: "Gesch\u00E4ftsf\u00FChrer, Autohaus Steinbach, Heidelberg",
+    author: "Ein Geschäftsführer",
+    role: "Autohaus in Heidelberg",
     title: "\u201EEin echtes Kundenbindungs-Tool \u2013 und die Logistik ist genial einfach\u201C",
     excerpt:
       "Wir haben lange nach einem sinnvollen Give-away gesucht, das \u00FCber den \u00FCblichen Schl\u00FCsselanh\u00E4nger hinausgeht. Mit RES-QR haben wir etwas gefunden, das einen echten Mehrwert bietet und das unsere Kunden ernst nehmen.",
@@ -85,8 +85,8 @@ const articles = [
   {
     category: "Flottenmanagement",
     date: "5. September 2025",
-    author: "Julia Hartmann",
-    role: "Fleet Managerin, MedCare Ambulanz GmbH, M\u00FCnchen (85 Fahrzeuge)",
+    author: "Eine Fleet Managerin",
+    role: "Ambulanzdienst aus München, 85 Fahrzeuge",
     title: "\u201EF\u00FCr unsere Rettungswagen und Dienstfahrzeuge unverzichtbar\u201C",
     excerpt:
       "Als Betreiberin einer Ambulanzflotte sind wir besonders sensibilisiert f\u00FCr das Thema Rettungssicherheit. Unsere eigenen Fahrzeuge sollten nat\u00FCrlich mit gutem Beispiel vorangehen \u2013 deshalb haben wir alle 85 Fahrzeuge mit RES-QR ausgestattet.",

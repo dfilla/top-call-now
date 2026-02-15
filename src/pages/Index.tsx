@@ -23,24 +23,30 @@ const stagger = {
 
 const testimonials = [
   {
+    quote: "\u201EAlso das erste was wir machen ist, wir schauen tatsächlich nach den QR-Codes.\u201C",
+    name: "Brandoberinspektorin Stefanie Wiehl",
+    role: "Berufsfeuerwehr Wiesbaden",
+    link: "https://www.youtube.com/watch?v=gm5V1wNw3lU&t=173s",
+  },
+  {
     quote: "\u201EEin Klick auf das RES-QR-Etikett und ich sehe auf meinem Smartphone, wo sich Tank, Gaspatronen der Airbags und elektrische Leitungen befinden. Das macht den Einsatz sicherer und effizienter.\u201C",
-    name: "Bj\u00F6rn Grosbach",
-    role: "Freiwillige Feuerwehr Hofheim-Wildsachsen",
+    name: "Ein Feuerwehrmann",
+    role: "Freiwillige Feuerwehr im Rhein-Main-Gebiet",
   },
   {
-    quote: "\u201EWir haben 120 Flottenfahrzeuge in unter einer Stunde bestellt. Am n\u00E4chsten Tag waren die Etiketten da. So einfach kann Sicherheit sein.\u201C",
-    name: "Thomas Brandt",
-    role: "Fuhrparkleiter, LogiTrans GmbH Frankfurt",
+    quote: "\u201EWir haben 120 Flottenfahrzeuge in unter einer Stunde bestellt. Am nächsten Tag waren die Etiketten da. So einfach kann Sicherheit sein.\u201C",
+    name: "Ein Fuhrparkleiter",
+    role: "Logistikunternehmen aus Frankfurt",
   },
   {
-    quote: "\u201ERES-QR ist fester Bestandteil jeder Fahrzeug\u00FCbergabe bei uns. Der Aufwand? Unter zwei Minuten. Die Wirkung? Unbezahlbar.\u201C",
-    name: "Sandra Keller",
-    role: "Serviceleiterin, Autohaus Keller & S\u00F6hne",
+    quote: "\u201ERES-QR ist fester Bestandteil jeder Fahrzeugübergabe bei uns. Der Aufwand? Unter zwei Minuten. Die Wirkung? Unbezahlbar.\u201C",
+    name: "Eine Serviceleiterin",
+    role: "Autohaus in Stuttgart",
   },
   {
     quote: "\u201EDie farbcodierten Etiketten helfen uns, den Antriebstyp auf den ersten Blick zu erkennen. Bei E-Fahrzeugen kann das Leben retten.\u201C",
-    name: "Stefanie Wiehl",
-    role: "Brandoberinspektorin, Berufsfeuerwehr Wiesbaden",
+    name: "Eine Brandinspektorin",
+    role: "Berufsfeuerwehr in Hessen",
   },
 ];
 
@@ -76,6 +82,16 @@ const TestimonialSlider = () => {
                 </blockquote>
                 <p className="font-semibold">{testimonials[current].name}</p>
                 <p className="text-muted-foreground text-sm">{testimonials[current].role}</p>
+                {testimonials[current].link && (
+                  <a
+                    href={testimonials[current].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-primary font-medium mt-2 hover:underline"
+                  >
+                    Video ansehen <ChevronRight className="h-3 w-3" />
+                  </a>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
