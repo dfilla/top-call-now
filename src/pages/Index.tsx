@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Shield, Clock, Smartphone, ChevronRight, Star, Users, Zap, CheckCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Shield, Clock, Smartphone, ChevronRight, Star, Users, Zap, CheckCircle, ChevronLeft } from "lucide-react";
 import heroImage from "@/assets/hero-rescue.jpg";
 import {
   Accordion,
@@ -20,6 +21,98 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
+const testimonials = [
+  {
+    quote: "\u201EEin Klick auf das RES-QR-Etikett und ich sehe auf meinem Smartphone, wo sich Tank, Gaspatronen der Airbags und elektrische Leitungen befinden. Das macht den Einsatz sicherer und effizienter.\u201C",
+    name: "Bj\u00F6rn Grosbach",
+    role: "Freiwillige Feuerwehr Hofheim-Wildsachsen",
+  },
+  {
+    quote: "\u201EWir haben 120 Flottenfahrzeuge in unter einer Stunde bestellt. Am n\u00E4chsten Tag waren die Etiketten da. So einfach kann Sicherheit sein.\u201C",
+    name: "Thomas Brandt",
+    role: "Fuhrparkleiter, LogiTrans GmbH Frankfurt",
+  },
+  {
+    quote: "\u201ERES-QR ist fester Bestandteil jeder Fahrzeug\u00FCbergabe bei uns. Der Aufwand? Unter zwei Minuten. Die Wirkung? Unbezahlbar.\u201C",
+    name: "Sandra Keller",
+    role: "Serviceleiterin, Autohaus Keller & S\u00F6hne",
+  },
+  {
+    quote: "\u201EDie farbcodierten Etiketten helfen uns, den Antriebstyp auf den ersten Blick zu erkennen. Bei E-Fahrzeugen kann das Leben retten.\u201C",
+    name: "Stefanie Wiehl",
+    role: "Brandoberinspektorin, Berufsfeuerwehr Wiesbaden",
+  },
+];
+
+const TestimonialSlider = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="py-20 lg:py-28" style={{ background: "hsl(var(--section-alt))" }}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center relative">
+          <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mb-8">
+            <Star className="h-8 w-8" />
+          </div>
+
+          <div className="relative min-h-[200px] sm:min-h-[180px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <blockquote className="font-display text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 leading-snug">
+                  {testimonials[current].quote}
+                </blockquote>
+                <p className="font-semibold">{testimonials[current].name}</p>
+                <p className="text-muted-foreground text-sm">{testimonials[current].role}</p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button
+              onClick={() => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+              className="h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary/40 transition-colors"
+              aria-label="Vorheriges Testimonial"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`h-2.5 rounded-full transition-all ${i === current ? "w-8 bg-primary" : "w-2.5 bg-border hover:bg-muted-foreground/30"}`}
+                  aria-label={`Testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={() => setCurrent((prev) => (prev + 1) % testimonials.length)}
+              className="h-10 w-10 rounded-full border border-border bg-card flex items-center justify-center hover:border-primary/40 transition-colors"
+              aria-label="N\u00E4chstes Testimonial"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -32,6 +125,7 @@ const Index = () => {
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
             <a href="https://www.res-qr.de" className="hover:text-foreground transition-colors">Home</a>
             <a href="https://res-qr.de/shop/rettungskarten.nsf/gutscheinkauf_neu" className="hover:text-foreground transition-colors">Shop</a>
+            <a href="/erfahrungen" className="hover:text-foreground transition-colors">Erfahrungen</a>
             <a href="https://www.res-qr.de/index.php/presse/" className="hover:text-foreground transition-colors">Presse</a>
             <a href="https://www.res-qr.de/index.php/kostenlos-fuer-retter/" className="hover:text-foreground transition-colors">Kostenlos für Retter</a>
           </div>
@@ -194,31 +288,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-20 lg:py-28" style={{ background: "hsl(var(--section-alt))" }}>
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-3xl mx-auto text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mb-8">
-              <Star className="h-8 w-8" />
-            </div>
-            <blockquote className="font-display text-2xl sm:text-3xl font-semibold mb-6 leading-snug">
-              „Ein Klick auf das RES-QR-Etikett und ich sehe auf meinem Smartphone,
-              wo sich Tank, Gaspatronen der Airbags und elektrische Leitungen befinden.
-              Das macht den Einsatz sicherer und effizienter."
-            </blockquote>
-            <div>
-              <p className="font-semibold">Björn Grosbach</p>
-              <p className="text-muted-foreground text-sm">Freiwillige Feuerwehr Hofheim-Wildsachsen</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Testimonial Slider */}
+      <TestimonialSlider />
 
       {/* How it works */}
       <section className="py-20 lg:py-28">
