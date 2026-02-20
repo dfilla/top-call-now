@@ -148,7 +148,7 @@ const EditOverlay = () => {
             <Pencil className="h-3 w-3" />
           </div>
           <div className="absolute -bottom-6 left-0 bg-foreground/90 text-background text-[10px] px-1.5 py-0.5 rounded font-mono whitespace-nowrap">
-            {"<"}{hovered.el.tagName.toLowerCase()}{hovered.el.className ? ` .${hovered.el.className.split(" ")[0]}` : ""}{">"}
+            {"<"}{hovered.el.tagName.toLowerCase()}{typeof hovered.el.className === "string" && hovered.el.className ? ` .${hovered.el.className.split(" ")[0]}` : ""}{">"}
           </div>
         </div>
       )}
