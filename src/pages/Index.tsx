@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Clock, Smartphone, ChevronRight, Star, Users, Zap, CheckCircle, ChevronLeft, Play } from "lucide-react";
+import EditOverlay from "@/components/EditOverlay";
 import heroImage from "@/assets/hero-rescue.jpg";
 import {
   Accordion,
@@ -115,7 +116,7 @@ const TestimonialSlider = () => {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background" contentEditable suppressContentEditableWarning>
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
@@ -558,6 +559,9 @@ const Index = () => {
           <span>© {new Date().getFullYear()} RES-QR – Technik zum Überleben</span>
         </div>
       </footer>
+
+      {/* Edit Overlay */}
+      <EditOverlay />
     </div>
   );
 };
