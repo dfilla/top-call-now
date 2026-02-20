@@ -128,7 +128,7 @@ const Index = () => {
             <a href="https://res-qr.de/shop/rettungskarten.nsf/gutscheinkauf_neu" className="hover:text-foreground transition-colors">Shop</a>
             <a href="/erfahrungen" className="hover:text-foreground transition-colors">Erfahrungen</a>
             <a href="https://www.res-qr.de/index.php/presse/" className="hover:text-foreground transition-colors">Presse</a>
-            <a href="https://www.res-qr.de/index.php/kostenlos-fuer-retter/" className="hover:text-foreground transition-colors">Kostenlos für Retter</a>
+            <a href="/kostenlos-fuer-retter" className="hover:text-foreground transition-colors">Kostenlos für Retter</a>
           </div>
           <a
             href={CTA_URL}
